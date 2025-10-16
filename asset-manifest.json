@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Fine-Dining/static/css/main.8555b167.css",
-    "main.js": "/Fine-Dining/static/js/main.4e2b9b13.js",
+    "main.js": "/Fine-Dining/static/js/main.dea14d88.js",
     "index.html": "/Fine-Dining/index.html",
     "main.8555b167.css.map": "/Fine-Dining/static/css/main.8555b167.css.map",
-    "main.4e2b9b13.js.map": "/Fine-Dining/static/js/main.4e2b9b13.js.map"
+    "main.dea14d88.js.map": "/Fine-Dining/static/js/main.dea14d88.js.map"
   },
   "entrypoints": [
     "static/css/main.8555b167.css",
-    "static/js/main.4e2b9b13.js"
+    "static/js/main.dea14d88.js"
   ]
 }
