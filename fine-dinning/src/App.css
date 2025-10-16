@@ -1,0 +1,480 @@
+/* ==============================
+   🌟 FINE DINING ULTRA PREMIUM
+   ============================== */
+
+/* Reset global */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #f8f6f3;
+  color: #2c2c2c;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(40, 40, 40, 0.85);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #cfa15b;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Vídeo do hero */
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* atrás do texto */
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay opcional no hero */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* escurece o vídeo */
+  z-index: 1; /* acima do vídeo, abaixo do texto */
+}
+
+/* Texto do hero */
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #f5f5f5;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-style: italic;
+ 
+  margin-top: 1rem;
+  animation: fadeUp 2s ease forwards;
+}
+
+/* Conceito */
+.concept {
+  max-width: 900px;
+  margin: 6rem auto 3rem auto;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease;
+}
+
+.concept h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #cfa15b;
+  margin-bottom: 1rem;
+}
+
+.concept p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Experiência Fine Dining */
+.experience {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.experience h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #cfa15b;
+  margin-bottom: 1rem;
+}
+
+.experience ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.experience ul li {
+  margin-bottom: 0.8rem;
+}
+
+/* Restaurantes */
+.restaurants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.restaurant-card {
+  background: #fff;
+  border-radius: 1.8rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  position: relative; /* garante que o z-index funcione */
+  z-index: 1;         /* acima do vídeo de fundo */
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-card img:hover {
+  transform: scale(1.05);
+}
+
+.restaurant-card-content {
+  padding: 1.5rem;
+}
+
+.restaurant-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #cfa15b;
+  margin: 0.5rem 0;
+}
+
+.restaurant-card p {
+  margin: 0.2rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Carrossel de pratos */
+.dish-carousel {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+
+.dish-carousel img {
+  width: 100px;
+  height: 80px;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish-carousel img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 1rem;
+}
+
+/* Mapa */
+.map-container {
+  max-width: 1100px;
+  margin: 4rem auto;
+  border-radius: 1.8rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  height: 500px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Footer */
+footer {
+  background: #f2eee9;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  color: #7b7b7b;
+  margin-top: 3rem;
+  border-top: 1px solid #e5e1da;
+}
+
+/* Animações */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.2rem; }
+  .navbar { padding: 0.8rem 1.5rem; flex-direction: column; gap: 0.5rem; }
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  background-color: #f8f8f8;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+}
+
+.filters select {
+  margin-top: 8px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filters select:hover {
+  border-color: #999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: #61dafb;
+  box-shadow: 0 4px 12px rgba(97,218,251,0.3);
+}
+
+/* Mensagem quando não há resultados */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin: 40px 0;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.search-bar {
+  width: 350px;
+  padding: 12px 45px 12px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.25s ease;
+  background-color: #fff;
+}
+
+.search-bar::placeholder {
+  color: #999;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.search-icon {
+  position: relative;
+  right: 35px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.search-icon:hover {
+  color: #d4af37;
+}
+
+/* Vídeo de fundo fixo */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* atrás de tudo */
+}
+
+
+.intro-text {
+  max-width: 1000px;
+  margin: 6rem auto 3rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(250, 250, 250, 0.3));
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.intro-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #cfa15b;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(207, 161, 91, 0.4);
+}
+
+.intro-text p {
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  padding: 25px 35px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-text p:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Efeito suave ao aparecer */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Segundo vídeo (video2.mp4) === */
+.secondary-background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.8; /* opcional: dá um toque mais suave */
+  pointer-events: none;
+}
+
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fundo de fallback */
+body {
+  background-color: #f9f6f0;
+}
+
