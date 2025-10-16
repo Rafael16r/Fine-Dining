@@ -135,7 +135,8 @@ export default function App() {
       {/* Vídeo de fundo fixo */}
     
       {/* Música de fundo */}
-      <audio ref={audioRef} src="/musica1.mp3" loop />
+     <audio ref={audioRef} src={process.env.PUBLIC_URL + '/musica1.mp3'} loop />
+
 
       {/* Navbar */}
       <nav className="navbar">
@@ -149,28 +150,27 @@ export default function App() {
         </div>
       </nav>
 <div className="content">
-      {/* Hero */}
-      <header id="hero" className="hero">
-        <div className="hero-video-container">
-          <video
-            className="hero-video"
-            src="/culinaria.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-         
-        </div>
+   {/* Hero */}
+<header id="hero" className="hero">
+  <div className="hero-video-container">
+    <video
+      className="hero-video"
+      src={process.env.PUBLIC_URL + '/culinaria.mp4'}
+      autoPlay
+      muted
+      loop
+      playsInline
+    />
+  </div>
 
-        <h1>Fine Dining</h1>
-        <p>A luxúria num prato</p>
-      </header>
+  <h1>Fine Dining</h1>
+  <p>A luxúria num prato</p>
+</header>
 
-    <div className="secondary-background-video">
+<div className="secondary-background-video">
   <video
     className="secondary-video"
-    src="/video2.mp4"
+    src={process.env.PUBLIC_URL + '/video2.mp4'}
     autoPlay
     loop
     muted
