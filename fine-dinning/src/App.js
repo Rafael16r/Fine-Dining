@@ -138,6 +138,7 @@ export default function App() {
      <audio ref={audioRef} src={process.env.PUBLIC_URL + '/musica1.mp3'} loop />
 
 
+
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">Fine Dining</div>
