@@ -147,7 +147,7 @@ export default function App() {
           <a href="#concept">Conceito</a>
    
           <a href="#restaurants">Restaurantes</a>
-          <a href="#map">Mapa</a>
+         
         </div>
       </nav>
 <div className="content">
