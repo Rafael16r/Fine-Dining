@@ -13,15 +13,16 @@ body, html, #root {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+/* Navbar base (o que já tens) */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 97%;
   background: rgba(40, 40, 40, 0.85);
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 3rem;
   z-index: 999;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -37,6 +38,25 @@ body, html, #root {
 
 .navbar a:hover {
   color: #cfa15b;
+}
+
+/* Responsivo para telas pequenas */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar a {
+    margin: 0.5rem 0; /* empilha os links */
+  }
 }
 
 /* Hero */
@@ -477,4 +497,5 @@ footer {
 body {
   background-color: #f9f6f0;
 }
+
 
