@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fine-Dining/static/css/main.8555b167.css",
+    "main.js": "/Fine-Dining/static/js/main.e28844e1.js",
+    "index.html": "/Fine-Dining/index.html",
+    "main.8555b167.css.map": "/Fine-Dining/static/css/main.8555b167.css.map",
+    "main.e28844e1.js.map": "/Fine-Dining/static/js/main.e28844e1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8555b167.css",
+    "static/js/main.e28844e1.js"
+  ]
+}
